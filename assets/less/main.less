@@ -1,0 +1,109 @@
+@import "../../bower_components/bootstrap/less/bootstrap";
+@import "lesshat";
+@import "common";
+
+body {
+  font-family: 'arial';
+}
+
+.calc-addFraction {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.calc {
+ // .inline-block('.calc-fraction');
+
+  .calc-fraction {
+    display: inline-block;
+    min-width: 10px;
+    overflow: hidden;
+    .calc-number {
+      display: block;
+      width: 100%;
+      min-width: 10px;
+      text-align: center;
+   //   outline: 1px dashed #ccc;
+      border: 0 solid;
+      border-top: 1px solid #ccc;
+      position: relative;
+      padding: 5px 3px;
+      top: -1px;
+
+      &:focus {
+        outline: 0 solid;
+        background-color: #FFFFCC;
+      }
+    }
+    vertical-align: middle;
+  }
+  .calc-fraction-sign {
+    vertical-align: middle;
+    display: inline-block;
+    padding-bottom: 20px;
+  }
+  .calc-signs {
+    vertical-align: middle;
+    display: inline-block;
+    height: 1em;
+    font-size: 2em;
+    position: relative;
+
+    .calc-signs-handlers {
+      font-size: .5em;
+      color: #ebebeb;
+      position: absolute;
+      .size(100%,200%);
+      top: -50%;
+      outline: 0 solid;
+      &:focus {
+        outline: 0 solid;
+      }
+      .calc-signs-handler-up, .calc-signs-handler-down {
+        top:0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        cursor: pointer;
+        outline: 0 solid;
+        &:focus {
+          outline: 0 solid;
+        }
+        &:hover {
+          color: #009977;
+        }
+      }
+      .calc-signs-handler-down {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    .calc-signs-roll {
+      overflow: hidden;
+      height: 1em;
+      .calc-signs-rolling {
+        .transition(top 1s);
+        position: relative;
+
+      }
+      .calc-sign {
+        display: block;
+        text-align: center;
+        padding: 0 .5em;
+        line-height: 1em;
+        .size(100%);
+        &:focus {
+          border: 0 solid;
+          outline: 0 solid;
+          background-color: #FFFFCC;
+        }
+      }
+    }
+
+    .calc-equal {
+      padding: 0 .5em;
+    }
+  }
+
+}
+

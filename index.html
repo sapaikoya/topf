@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+      <meta name="description" content="">
+
+      <!-- script src="bower_components/modernizr/modernizr.js"></script -->
+      <link rel="stylesheet" type="text/css" href="bower_components/angular-ui/build/angular-ui.min.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+
+
+      <title>topface</title>
+  </head>
+  <body ng-app="topface">
+
+  <section class="container padT-50">
+
+      <form action="" ng-controller="calcCtrl">
+          <section class="calc">
+              <!-- div class="calc-fraction">
+                  <input type="text" tabindex="1"  class="calc-number" />
+                  <input type="text" tabindex="2"  class="calc-number" />
+              </div>
+              <ng-changesign tabindex="3"  sign="sign"></ng-changesign>
+              <div class="calc-fraction">
+                  <input type="text" tabindex="4"  class="calc-number" />
+                  <input type="text" tabindex="5"  class="calc-number" />
+              </div>
+              <div tabindex="6"  class="calc-signs">
+                <div class="calc-equal"> = </div>
+              </div>
+              <div class="calc-fraction">
+                  <input type="text" tabindex="7"  class="calc-number" />
+                  <input type="text" tabindex="8"  class="calc-number" />
+              </div -->
+
+
+
+              <div class="calc-fraction-sign" ng-repeat="fr in fraction">
+                  <ng-changesign  tabindex="$index" ng-if="!$first" index="$index" fraction="fraction" fractionsigns="fractionsigns"></ng-changesign>
+                  <div class="calc-fraction">
+                      <input type="text" tabindex="{{$index+1}}" ng-model="fr.divider"  class="calc-number" />
+                      <input type="text" tabindex="{{$index+2}}" ng-model="fr.denominator" class="calc-number" />
+                  </div>
+              </div>
+              <div class="calc-fraction-sign">
+                  <div tabindex="6"  class="calc-signs">
+                      <div class="calc-equal"> = </div>
+                  </div>
+                  <div tabindex="7"  class="calc-signs" ng-if="result.sign">
+                      -
+                  </div>
+                  <div class="calc-fraction">
+                      <input type="text" tabindex="7"  ng-model="result.divider" class="calc-number" />
+                      <input type="text" tabindex="8" ng-model="result.denominator"  class="calc-number" />
+                  </div>
+              </div>
+          </section>
+          <div class="padT-55"><span class="calc-addFraction" ng-click="addFraction()">Add fraction</span></div>
+
+      </form>
+
+
+  </section>
+
+  <script src="bower_components/angularjs/angular.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/underscore/underscore-min.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui-ieshiv.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="assets/js/controllers.js"></script>
+  <script src="assets/js/directives.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div class="calc-signs">
+    <div class="calc-signs-handlers">
+        <div class="glyphicon glyphicon-chevron-up calc-signs-handler-up" ng-click="goUp()"></div>
+        <div class="glyphicon glyphicon-chevron-down calc-signs-handler-down" ng-click="goDown()"></div>
+    </div>
+    <div class="calc-signs-roll">
+        <div class="calc-signs-rolling" style="top: {{rollPosition}}px">
+            <div class="calc-sign" ng-repeat="sign in signs">{{sign}}</div>
+        </div>
+    </div>
+</div>
